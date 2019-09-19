@@ -27,8 +27,8 @@ $.ajax({
         $(data).find("comment").each(function (event) {
             newHtml += `
             <div class="review">
-                <span class="nombre">${$(this).find("name").text()}</span>
-                <span>${getStarsSpans($(this).find("stars").text())}</span>
+                <span class="nombre">${$(this).find("name").text()}</span><br>
+                <span>${getStarsSpans($(this).find("stars").text())}</span><br>
                 <span>${$(this).find("text").text()}</span>
             </div>
             `
@@ -101,9 +101,10 @@ $("#btn-limpiar").on("click", function (event) {
 
 function clean() {
     console.log("entra2")
-    $("#nombre").empty() == ""
-    $("#email").empty() == ""
-    $("#comentario").empty() == ""
+    $("#nombre").val("")
+    $("#email").val("")
+    $("#comentario").empty()
+    $("#rating").empty()
 }
 
 
